@@ -4,7 +4,7 @@ var points = [[0], [0, 0], [100, 0], [200, 0], [300, 0], [400, 0], [400, 0], [40
 
 function setup() {
   
-  createCanvas(1000, 1000);
+  createCanvas(2000, 2000);
 }
 
 function draw() {
