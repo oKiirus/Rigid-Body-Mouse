@@ -1,14 +1,23 @@
-var start = [500, 500]
+var start = [1000, 1000]
 var done = false
 var points = [[0], [0, 0], [100, 0], [200, 0], [300, 0], [400, 0], [400, 0], [400, 0]]
 
 function setup() {
+  
   createCanvas(2000, 2000);
 }
 
 function draw() {
-  background(38);
+  
+  dx = mouseX - 1000
+  dy = mouseY - 1000
+  angle = atan2(dy, dx)
+  
+  
 
+  xVelocity = 1 * cos(angle)
+  yVelocity = 1 * sin(angle)
+  background(38);
   noStroke()
   fill('#72DB77')
   circle(mouseX, mouseY, 50)
@@ -21,7 +30,6 @@ function draw() {
   
  
     done = false
-
     while(done === false){
       
       for(let i = 1; i < points.length - 1; i++){
@@ -38,7 +46,6 @@ function draw() {
       
         
       }
-
      for(let i = points.length - 3; i >= 1; i--){
         points[0] = [mouseX, mouseY]
         dx = points[i][0] - points[i + 1][0]
@@ -56,7 +63,10 @@ function draw() {
       done = true
           }
     
-
+    
+    
+  
+  
   for(let i = 0; i < points.length - 2; i++){
     
     stroke(0)
